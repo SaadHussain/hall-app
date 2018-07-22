@@ -1,3 +1,21 @@
-<p>
-  booking-list works!
-</p>
+<h6 class="text-center">Booking List</h6>
+<br/>
+<table class="table table-sm table-hover">  
+  <tr *ngFor = "let booking of bookingList">
+    <td>{{booking.CustomerName}}</td>
+    <td>{{booking.BookingDate}}</td>
+    <td>{{booking.TotalBookingAmount}}</td>
+    <td>{{booking.AdvanceAmount}}</td>
+    <td>{{booking.HeadCount}}</td>
+    <td>
+      <a class="btn" (click)=onEdit(booking)>
+        <i class="fa fa-pencil-square-o"></i>
+      </a>
+    </td>
+    <td>
+        <a class="btn">
+          <i class="fa fa-trash-o"></i>
+        </a>
+      </td>
+  </tr>
+</table>

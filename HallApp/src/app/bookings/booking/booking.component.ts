@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BookingService } from '../shared/booking.service';
 import { Form, NgForm } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-booking',
@@ -9,16 +10,19 @@ import { Form, NgForm } from '@angular/forms';
 })
 export class BookingComponent implements OnInit {
 
-  constructor(private bookingService : BookingService) { }
+  constructor(private bookingService : BookingService,private toastr : ToastrService) { }
 
   ngOnInit() {
-    this.bookingService.getData();
+    
     this.resetForm()
   }
 
   onSubmit(bookingForm : NgForm){
     this.bookingService.insertBooking(bookingForm.value);
     this.resetForm(bookingForm);
+    debugger;
+    this.toastr.success('Success','WApp Works');
+    debugger;
   }
 
   resetForm(bookingForm? : NgForm){
@@ -40,5 +44,7 @@ export class BookingComponent implements OnInit {
         NumberOfWaiters: 0    
     }
   }
+
+ 
 
 }

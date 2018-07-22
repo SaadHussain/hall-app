@@ -32,12 +32,12 @@
     <input class="form-control" name="Package" #Package="ngModel" [(ngModel)]="bookingService.Package" placeholder="Package">
   </div>
   <div class="form-group">
-    <label>Table Service Flag</label>
-    <input class="form-control" name="TableServiceFlag" #TableServiceFlag="ngModel" [(ngModel)]="bookingService.TableServiceFlag">
+      <label>Table Service Flag</label>
+      <input type="checkbox" class="form-control" name="TableServiceFlag" #TableServiceFlag="ngModel" [(ngModel)]="bookingService.TableServiceFlag">
   </div>
   <div class="form-group">
     <label>Sound System Flag</label>
-    <input class="form-control" name="SoundSystemFlag" #SoundSystemFlag="ngModel" [(ngModel)]="bookingService.SoundSystemFlag" >
+    <input  type="checkbox" class="form-control" name="SoundSystemFlag" #SoundSystemFlag="ngModel" [(ngModel)]="bookingService.SoundSystemFlag" >
   </div>
   <div class="form-group">
     <label>Number Of Crates</label>
