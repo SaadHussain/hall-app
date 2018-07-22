@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { BookingService } from '../shared/booking.service'
 @Component({
   selector: 'app-booking-list',
   templateUrl: './booking-list.component.html',
@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookingListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private bookingService: BookingService) { }
 
   ngOnInit() {
   }

@@ -6,6 +6,7 @@ export class Booking {
     BookingDate : string;
     HeadCount: number;
     AdvanceAmount: number;
+    TotalBookingAmount:number;
     Package: string;
     TableServiceFlag: boolean;
     SoundSystemFlag: boolean;

@@ -6,6 +6,7 @@ import { Booking } from './booking.model';
 })
 export class BookingService {
   bookingList: AngularFireList<any>;
+  selectedBooking: Booking = new Booking();
   constructor(private firebase: AngularFireDatabase) { }
   
   getData(){
@@ -22,6 +23,7 @@ export class BookingService {
       BookingDate : booking.BookingDate,
       HeadCount: booking.HeadCount,
       AdvanceAmount: booking.AdvanceAmount,
+      TotalBookingAmount: booking.TotalBookingAmount,
       Package: booking.Package,
       TableServiceFlag: booking.TableServiceFlag,
       SoundSystemFlag: booking.SoundSystemFlag,
@@ -39,6 +41,7 @@ export class BookingService {
       BookingDate : booking.BookingDate,
       HeadCount: booking.HeadCount,
       AdvanceAmount: booking.AdvanceAmount,
+      TotalBookingAmount: booking.TotalBookingAmount,
       Package: booking.Package,
       TableServiceFlag: booking.TableServiceFlag,
       SoundSystemFlag: booking.SoundSystemFlag,
