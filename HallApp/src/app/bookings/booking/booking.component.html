@@ -1,51 +1,52 @@
 <form #bookingForm="ngForm" (ngSubmit)="onSubmit(bookingForm)">
+    <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="bookingService.selectedBooking.$key">
   <div class="form-group">
     <label>Customer Name</label>
-    <input class="form-control" name="CustomerName" #CustomerName="ngModel" [(ngModel)]="bookingService.CustomerName" placeholder="Customer Name" required>
+    <input class="form-control" name="CustomerName" #CustomerName="ngModel" [(ngModel)]="bookingService.selectedBooking.CustomerName" placeholder="Customer Name" required>
   </div>
   <div class="form-group">
     <label>Customer Phone 1</label>
-    <input class="form-control" name="CustomerPhone1" #CustomerPhone1="ngModel" [(ngModel)]="bookingService.CustomerPhone1" placeholder="Phone Number" required>
+    <input class="form-control" name="CustomerPhone1" #CustomerPhone1="ngModel" [(ngModel)]="bookingService.selectedBooking.CustomerPhone1" placeholder="Phone Number" required>
   </div>
   <div class="form-group">
     <label>Customer Phone 2</label>
-    <input class="form-control" name="CustomerPhone2" #CustomerPhone2="ngModel" [(ngModel)]="bookingService.CustomerPhone2" placeholder="Phone Number">
+    <input class="form-control" name="CustomerPhone2" #CustomerPhone2="ngModel" [(ngModel)]="bookingService.selectedBooking.CustomerPhone2" placeholder="Phone Number">
   </div>
   <div class="form-group">
     <label>Booking Date</label>
-    <input class="form-control" name="BookingDate" #BookingDate="ngModel" [(ngModel)]="bookingService.BookingDate">
+    <input class="form-control" name="BookingDate" #BookingDate="ngModel" [(ngModel)]="bookingService.selectedBooking.BookingDate">
   </div>
   <div class="form-group">
     <label>Head Count</label>
-    <input class="form-control" name="HeadCount" #HeadCount="ngModel" [(ngModel)]="bookingService.HeadCount" placeholder="Head Count">
+    <input class="form-control" name="HeadCount" #HeadCount="ngModel" [(ngModel)]="bookingService.selectedBooking.HeadCount" placeholder="Head Count">
   </div>  
   <div class="form-group">
     <label>Total Booking Amount</label>
-    <input class="form-control" name="TotalBookingAmount" #TotalBookingAmount="ngModel" [(ngModel)]="bookingService.TotalBookingAmount" placeholder="Total Booking Amount">
+    <input class="form-control" name="TotalBookingAmount" #TotalBookingAmount="ngModel" [(ngModel)]="bookingService.selectedBooking.TotalBookingAmount" placeholder="Total Booking Amount">
   </div>
   <div class="form-group">
     <label>Advance Amount</label>
-    <input class="form-control" name="AdvanceAmount" #AdvanceAmount="ngModel" [(ngModel)]="bookingService.AdvanceAmount" placeholder="Advance Amount">
+    <input class="form-control" name="AdvanceAmount" #AdvanceAmount="ngModel" [(ngModel)]="bookingService.selectedBooking.AdvanceAmount" placeholder="Advance Amount">
   </div>
   <div class="form-group">
     <label>Package</label>
-    <input class="form-control" name="Package" #Package="ngModel" [(ngModel)]="bookingService.Package" placeholder="Package">
+    <input class="form-control" name="Package" #Package="ngModel" [(ngModel)]="bookingService.selectedBooking.Package" placeholder="Package">
   </div>
   <div class="form-group">
       <label>Table Service Flag</label>
-      <input type="checkbox" class="form-control" name="TableServiceFlag" #TableServiceFlag="ngModel" [(ngModel)]="bookingService.TableServiceFlag">
+      <input type="checkbox" class="form-control" name="TableServiceFlag" #TableServiceFlag="ngModel" [(ngModel)]="bookingService.selectedBooking.TableServiceFlag">
   </div>
   <div class="form-group">
     <label>Sound System Flag</label>
-    <input  type="checkbox" class="form-control" name="SoundSystemFlag" #SoundSystemFlag="ngModel" [(ngModel)]="bookingService.SoundSystemFlag" >
+    <input  type="checkbox" class="form-control" name="SoundSystemFlag" #SoundSystemFlag="ngModel" [(ngModel)]="bookingService.selectedBooking.SoundSystemFlag" >
   </div>
   <div class="form-group">
     <label>Number Of Crates</label>
-    <input class="form-control" name="NumberOfCrates" #NumberOfCrates="ngModel" [(ngModel)]="bookingService.NumberOfCrates" placeholder="Number Of Crates">
+    <input class="form-control" name="NumberOfCrates" #NumberOfCrates="ngModel" [(ngModel)]="bookingService.selectedBooking.NumberOfCrates" placeholder="Number Of Crates">
   </div>
   <div class="form-group">
     <label>Number Of Waiters</label>
-    <input class="form-control" name="NumberOfWaiters" #NumberOfWaiters="ngModel" [(ngModel)]="bookingService.NumberOfWaiters" placeholder="Number Of Waiters">
+    <input class="form-control" name="NumberOfWaiters" #NumberOfWaiters="ngModel" [(ngModel)]="bookingService.selectedBooking.NumberOfWaiters" placeholder="Number Of Waiters">
   </div>
   <div class="form-group">
     <button class="btn btn-default" type="submit" [disabled] = !bookingForm.valid>

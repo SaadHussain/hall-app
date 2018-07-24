@@ -18,10 +18,13 @@ export class BookingComponent implements OnInit {
   }
 
   onSubmit(bookingForm : NgForm){
-    this.bookingService.insertBooking(bookingForm.value);
+    if(bookingForm.value.$key == null)
+      this.bookingService.insertBooking(bookingForm.value);
+    else
+      this.bookingService.updateBooking(bookingForm.value);
     this.resetForm(bookingForm);
     debugger;
-    this.toastr.success('Success','WApp Works');
+    this.toastr.success('Booking','Successfully Added');
     debugger;
   }
 
