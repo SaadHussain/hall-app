@@ -38,7 +38,13 @@
   </div>
   <div class="form-group">
     <label>Package</label>
-    <input class="form-control" name="Package" #Package="ngModel" [(ngModel)]="bookingService.selectedBooking.Package" placeholder="Package">
+    <!-- <input class="form-control" name="Package" #Package="ngModel" [(ngModel)]="bookingService.selectedBooking.Package" placeholder="Package"> -->
+    <select class="form-control" name="Package" #Package="ngModel" [(ngModel)]="bookingService.selectedBooking.Package">
+        <option>Gold</option>
+        <option>Silver</option>
+        <option>Platinium</option>
+        <option>Bronze</option>
+      </select>
   </div>
   <div class="form-group">
       <div class="input-group-append">
