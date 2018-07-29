@@ -1,9 +1,18 @@
 <h6 class="text-center">Booking List</h6>
 <br/>
 <table class="table table-sm table-hover">  
+  <thead>
+      <th scope="col">Name</th>
+      <th scope="col">Date</th>
+      <th scope="col">Total Amount</th>
+      <th scope="col">Advance Amount</th>
+      <th scope="col">Head Count</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
+  </thead>
   <tr *ngFor = "let booking of bookingList">
     <td>{{booking.CustomerName}}</td>
-    <td>{{booking.BookingDate}}</td>
+    <td>{{booking.BookingDateString}}</td>
     <td>{{booking.TotalBookingAmount}}</td>
     <td>{{booking.AdvanceAmount}}</td>
     <td>{{booking.HeadCount}}</td>

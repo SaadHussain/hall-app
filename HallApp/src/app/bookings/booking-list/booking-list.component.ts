@@ -4,6 +4,7 @@ import { Booking } from '../shared/booking.model';
 import { elementEnd } from '../../../../node_modules/@angular/core/src/render3/instructions';
 import { ToastrService } from 'ngx-toastr';
 
+
 @Component({
   selector: 'app-booking-list',
   templateUrl: './booking-list.component.html',
@@ -18,7 +19,7 @@ export class BookingListComponent implements OnInit {
     bkngList.snapshotChanges().subscribe(item => {
           this.bookingList = [];
           item.forEach(element=>{ var y = element.payload.toJSON();
-            y["$key"] = element.key;
+            y["$key"] = element.key;            
             this.bookingList.push(y as Booking);
           }) 
     });
