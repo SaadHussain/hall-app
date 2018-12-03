@@ -14,5 +14,9 @@ export class Booking {
     TableServiceFlag: boolean;
     SoundSystemFlag: boolean;
     NumberOfCrates: number; 
-    NumberOfWaiters: number;    
+    NumberOfWaiters: number;
+    CreatedBy:string;
+    CreatedDate:string;
+    LastUpdatedBy:string;
+    LastUpdatedDate:string;    
 }

@@ -63,7 +63,11 @@ export class BookingComponent implements OnInit {
         TableServiceFlag: false,
         SoundSystemFlag: false,
         NumberOfCrates: 0, 
-        NumberOfWaiters: 0    
+        NumberOfWaiters: 0,
+        CreatedBy:'',
+        CreatedDate:'',
+        LastUpdatedBy:'',        
+        LastUpdatedDate:''    
     }
   }
 

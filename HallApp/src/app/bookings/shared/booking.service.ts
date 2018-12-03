@@ -21,7 +21,7 @@ export class BookingService {
       CustomerPhone1 : booking.CustomerPhone1,
       CustomerPhone2 : booking.CustomerPhone2,    
       BookingDate : booking.BookingDate,
-      BookingDateString : new Date(booking.BookingDate.year,booking.BookingDate.month, booking.BookingDate.day).toString(),
+      BookingDateString : new Date(booking.BookingDate.year,booking.BookingDate.month-1, booking.BookingDate.day).toLocaleDateString('en-GB'),
       HeadCount: booking.HeadCount,
       AdvanceAmount: booking.AdvanceAmount,
       TotalBookingAmount: booking.TotalBookingAmount,
@@ -29,7 +29,12 @@ export class BookingService {
       TableServiceFlag: booking.TableServiceFlag,
       SoundSystemFlag: booking.SoundSystemFlag,
       NumberOfCrates: booking.NumberOfCrates, 
-      NumberOfWaiters: booking.NumberOfWaiters    
+      NumberOfWaiters: booking.NumberOfWaiters ,
+      CreatedBy: 'admin',
+      CreatedDate: new Date().toLocaleDateString('en-GB'),
+      LastUpdatedBy:'admin',
+      LastUpdatedDate: new Date().toLocaleDateString('en-GB'),      
+
     });
   }
 
@@ -40,7 +45,7 @@ export class BookingService {
       CustomerPhone1 : booking.CustomerPhone1,
       CustomerPhone2 : booking.CustomerPhone2,    
       BookingDate : booking.BookingDate,
-      BookingDateString : new Date(booking.BookingDate.year,booking.BookingDate.month-1, booking.BookingDate.day).toLocaleDateString(),
+      BookingDateString : new Date(booking.BookingDate.year,booking.BookingDate.month-1, booking.BookingDate.day).toLocaleDateString('en-GB'),
       HeadCount: booking.HeadCount,
       AdvanceAmount: booking.AdvanceAmount,
       TotalBookingAmount: booking.TotalBookingAmount,
@@ -48,7 +53,12 @@ export class BookingService {
       TableServiceFlag: booking.TableServiceFlag,
       SoundSystemFlag: booking.SoundSystemFlag,
       NumberOfCrates: booking.NumberOfCrates, 
-      NumberOfWaiters: booking.NumberOfWaiters    
+      NumberOfWaiters: booking.NumberOfWaiters,
+      CreatedBy: 'admin',
+      CreatedDate: new Date().toLocaleDateString('en-GB'),
+      LastUpdatedBy:'admin',
+      LastUpdatedDate: new Date().toLocaleDateString('en-GB')  
+
     });
   }
 
