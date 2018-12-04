@@ -1,30 +1,63 @@
-<h6 class="text-center">Booking List</h6>
-<br/>
-<table class="table table-sm table-hover">  
-  <thead>
-      <th scope="col">Name</th>
-      <th scope="col">Date</th>
-      <th scope="col">Total Amount</th>
-      <th scope="col">Advance Amount</th>
-      <th scope="col">Head Count</th>
-      <th scope="col">Edit</th>
-      <th scope="col">Delete</th>
-  </thead>
-  <tr *ngFor = "let booking of bookingList">
-    <td>{{booking.CustomerName}}</td>
-    <td>{{booking.BookingDateString}}</td>
-    <td>{{booking.TotalBookingAmount}}</td>
-    <td>{{booking.AdvanceAmount}}</td>
-    <td>{{booking.HeadCount}}</td>
-    <td>
-      <a class="btn" (click)=onEdit(booking)>
-        <i class="fa fa-pencil-square-o"></i>
-      </a>
-    </td>
-    <td>
-        <a class="btn">
-          <i class="fa fa-trash-o" (click)=onDelete(booking.$key)></i>
-        </a>
-      </td>
-  </tr>
-</table>
+
+<mat-form-field>
+  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+</mat-form-field>
+
+<div class="mat-elevation-z8">
+  
+  <mat-table #table [dataSource]="dataSource" matSort>      
+
+      <ng-container matColumnDef="CustomerName">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+          <mat-cell *matCellDef="let booking"> {{booking.CustomerName}} </mat-cell>
+        </ng-container>
+
+      <ng-container matColumnDef="BookingDateString">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Date </mat-header-cell>
+          <mat-cell *matCellDef="let booking"> {{booking.BookingDateString}} </mat-cell>
+        </ng-container>
+      
+        <ng-container matColumnDef="TotalBookingAmount">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Total </mat-header-cell>
+          <mat-cell *matCellDef="let booking"> {{booking.TotalBookingAmount}} </mat-cell>
+        </ng-container>
+        
+        <ng-container matColumnDef="AdvanceAmount">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Advance </mat-header-cell>
+          <mat-cell *matCellDef="let booking"> {{booking.AdvanceAmount}} </mat-cell>
+        </ng-container>
+        
+        <ng-container matColumnDef="HeadCount">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Head Count </mat-header-cell>
+          <mat-cell *matCellDef="let booking"> {{booking.HeadCount}} </mat-cell>
+        </ng-container> 
+
+        <ng-container matColumnDef="Edit">
+            <mat-header-cell *matHeaderCellDef>
+            Edit
+            </mat-header-cell>
+            <mat-cell *matCellDef="let booking">
+                <a class="btn" (click)=onEdit(booking)>
+                    <i class="fa fa-pencil-square-o"></i>
+                </a>
+            </mat-cell>
+          </ng-container>
+
+          
+        <ng-container matColumnDef="Delete">
+            <mat-header-cell *matHeaderCellDef>
+            Delete
+            </mat-header-cell>
+            <mat-cell *matCellDef="let booking">
+                <a class="btn">
+                    <i class="fa fa-trash-o" (click)=onDelete(booking.$key)></i>
+                </a>
+            </mat-cell>
+          </ng-container>
+  
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  
+  </mat-table>
+  <mat-paginator [pageSizeOptions]="[10, 25, 100]"></mat-paginator>
+</div>

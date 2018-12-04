@@ -14,6 +14,17 @@ import { BookingsComponent } from './bookings/bookings.component';
 import { BookingListComponent } from './bookings/booking-list/booking-list.component';
 import { BookingComponent } from './bookings/booking/booking.component';
 import { ToastrModule } from 'ngx-toastr';
+import { 
+  MatCardModule,
+  MatProgressSpinnerModule,
+  MatMenuModule,
+  MatIconModule,
+  MatToolbarModule,
+  MatButtonModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatSelectModule,
+  MatSortModule,MatTableModule, MatPaginatorModule } from '@angular/material';
 
 
 @NgModule({
@@ -24,6 +35,7 @@ import { ToastrModule } from 'ngx-toastr';
     BookingListComponent,
     BookingComponent
     
+    
   ],
   imports: [
     BrowserModule,
@@ -33,7 +45,24 @@ import { ToastrModule } from 'ngx-toastr';
     NgbModule.forRoot(),
     FormsModule,
     ToastrModule.forRoot(),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    BrowserModule,
+    
+    FormsModule,
+    
+    MatCardModule,
+    MatProgressSpinnerModule,
+    MatMenuModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatSortModule,
+    MatTableModule,
+    MatPaginatorModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
