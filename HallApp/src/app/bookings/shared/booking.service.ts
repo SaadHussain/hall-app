@@ -10,7 +10,9 @@ export class BookingService {
   constructor(private firebase: AngularFireDatabase) { }
   
   getData(){
-    this.bookingList = this.firebase.list('bookings');
+    // this.bookingList = this.firebase.list('bookings');
+     this.bookingList = this.firebase.list('bookings', ref => ref.orderByKey());
+
     return this.bookingList;
   }
 

@@ -16,8 +16,8 @@ export class BookingListComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
   dataSource;
-  displayedColumns = [];
-  // displayedColumns=  ['Name', 'BookingDateString', 'TotalBookingAmount', 'AdvanceAmount','HeadCount','select'];     
+  // displayedColumns = [];
+  displayedColumns=  ['CustomerName', 'BookingDateString', 'TotalBookingAmount', 'AdvanceAmount','HeadCount','Edit','Delete'];     
   bookingList : Booking[];
   columnNames = [{
     id: "CustomerName",
@@ -26,6 +26,10 @@ export class BookingListComponent implements OnInit {
   }, {
     id: "BookingDateString",
     value: "Date"
+  },
+  {
+    id: "BookingDate",
+    value: "HiddenBookingDate"
   },
   {
     id: "TotalBookingAmount",
@@ -55,7 +59,7 @@ export class BookingListComponent implements OnInit {
     var bkngList = this.bookingService.getData();
     bkngList.snapshotChanges().subscribe(item => {
           this.bookingList = [];
-          item.forEach(element=>{ var y = element.payload.toJSON();
+          item.reverse().forEach(element=>{ var y = element.payload.toJSON();
             y["$key"] = element.key;            
             this.bookingList.push(y as Booking);
           }) 
@@ -64,7 +68,7 @@ export class BookingListComponent implements OnInit {
           this.dataSource.sort = this.sort;
     });
     
-    this.displayedColumns = this.columnNames.map(x => x.id);
+    // this.displayedColumns = this.columnNames.map(x => x.id);
     // this.displayedColumns.concat('select');
   }
   

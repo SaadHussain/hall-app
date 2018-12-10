@@ -46,10 +46,8 @@ import {
     FormsModule,
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
-    BrowserModule,
-    
-    FormsModule,
-    
+    BrowserModule,    
+    FormsModule,    
     MatCardModule,
     MatProgressSpinnerModule,
     MatMenuModule,
