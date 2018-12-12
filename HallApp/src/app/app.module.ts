@@ -7,6 +7,7 @@ import { environment } from './../environments/environment';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
+import {RouterModule,Routes} from '@angular/router'
 
 import { AppComponent } from './app.component';
 import { AppNavbarComponent } from './app-navbar/app-navbar.component';
@@ -26,6 +27,10 @@ import {
   MatSelectModule,
   MatSortModule,MatTableModule, MatPaginatorModule } from '@angular/material';
 
+  const appRoutes: Routes = [    
+    { path: 'bookings/booking', component: BookingComponent },
+    { path: 'bookings/booking-list', component: BookingListComponent },
+  ];
 
 @NgModule({
   declarations: [
@@ -59,7 +64,11 @@ import {
     MatSelectModule,
     MatSortModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: true } // <-- debugging purposes only
+    )
     
   ],
   providers: [],
