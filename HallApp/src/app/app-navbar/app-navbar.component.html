@@ -1,7 +1,14 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
   <h1 class="navbar-brand">Hall Booking App</h1>
-  
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item active">
+      <a class="nav-link" routerLink="/bookings/booking" routerLinkActive="active">Add Booking </a>  
+    </li>
+    <li class="nav-item active">
+      <a class="nav-link" routerLink="/bookings/booking-list" routerLinkActive="active">Booking List</a>
+    </li>
+  </ul>  
+  <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarsExampleDefault">
@@ -18,15 +25,15 @@
       <li class="nav-item">
           <a class="nav-link disabled" href="#">Expenses </a>
         </li>
-      <!-- <li class="nav-item dropdown" ngbDropdown>
+      <li class="nav-item dropdown" ngbDropdown>
         <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ngbDropdownToggle>Dropdown</a>
         <div class="dropdown-menu" aria-labelledby="dropdown01" ngbDropdownMenu>
           <a class="dropdown-item" href="#">Action</a>
           <a class="dropdown-item" href="#">Another action</a>
           <a class="dropdown-item" href="#">Something else here</a>
         </div>
-      </li> -->
+      </li>
     </ul>
    
-  </div>
+  </div> -->
 </nav>

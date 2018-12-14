@@ -3,7 +3,7 @@
   <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
 </mat-form-field>
 
-<div class="mat-elevation-z8">
+<div class="mat-elevation-z8 table-div">
   
   <mat-table #table [dataSource]="dataSource" matSort>      
 
@@ -32,7 +32,7 @@
           <mat-cell *matCellDef="let booking"> {{booking.HeadCount}} </mat-cell>
         </ng-container> 
 
-        <ng-container matColumnDef="Edit">
+        <ng-container matColumnDef="Edit" >
             <mat-header-cell *matHeaderCellDef>
             Edit
             </mat-header-cell>
@@ -44,7 +44,7 @@
           </ng-container>
 
           
-        <ng-container matColumnDef="Delete">
+        <!-- <ng-container matColumnDef="Delete" >
             <mat-header-cell *matHeaderCellDef>
             Delete
             </mat-header-cell>
@@ -54,7 +54,7 @@
                 </a>
             </mat-cell>
           </ng-container>
-  
+   -->
   <mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></mat-header-row>
   <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
   

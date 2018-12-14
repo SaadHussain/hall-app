@@ -17,7 +17,7 @@ export class BookingListComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
   dataSource;
   // displayedColumns = [];
-  displayedColumns=  ['CustomerName', 'BookingDateString', 'TotalBookingAmount', 'AdvanceAmount','HeadCount','Edit','Delete'];     
+  displayedColumns=  ['CustomerName', 'BookingDateString', 'TotalBookingAmount', 'AdvanceAmount','HeadCount','Edit'];     
   bookingList : Booking[];
   columnNames = [{
     id: "CustomerName",
