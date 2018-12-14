@@ -26,6 +26,7 @@ import {
   MatInputModule,
   MatSelectModule,
   MatSortModule,MatTableModule, MatPaginatorModule } from '@angular/material';
+import { AppRoutingModule } from './/app-routing.module';
 
   const appRoutes: Routes = [    
     { path: 'bookings/booking', component: BookingComponent },
@@ -64,11 +65,8 @@ import {
     MatSelectModule,
     MatSortModule,
     MatTableModule,
-    MatPaginatorModule,
-    RouterModule.forRoot(
-      appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
-    )
+    MatPaginatorModule, 
+    AppRoutingModule
     
   ],
   providers: [],
